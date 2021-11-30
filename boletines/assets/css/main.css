@@ -1,0 +1,182 @@
+/*
+Rosa: #FC60D2
+Purpura: #CF55E0
+Lila: #BF6AF7
+Azul/violeta: #8355E0
+Azul: #6860FC
+*/
+
+html{
+    margin:0px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+a{
+    text-decoration:none;
+    color: #6860FC;
+}
+
+.title{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.paragraph{
+    line-height:1.8em;
+    font-weight: 300;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.container{
+    display: flex;/*los nodos/eltos de este contenedor van a adoptar
+     su posicion usando como herramienta de posicion el flex box  */
+    align-items: center; /*alineamos los eltos al centro*/
+    justify-content: center;/*coloca al elto en el centro :D*/
+    height: 100vh; /*si o si vh abarca tooodo el alto total de la pantalla*/
+    /*
+    podemos especificar para el ancho tambien,
+    aunque no es muy necesario xq por defecto ya lo
+    utiliza, pero sería así:*/
+    width: 99vw; /*si o si vw abarca tooodo el ancho total de la pantalla*/    
+    background: #CF55E0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #CF55E0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f64f59, #c471ed, #CF55E0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+/*Este content lo usábamos antes de utilizar el
+Concpeto de Mobile First, por loque también 
+modificamos el @media para que trabaje en pantallas
+con un minimo de 900px */
+.content{
+    max-width: 960px;/*ancho máx(le puse mil así el fondo blanco abarca todo el ancho del contenido de mi tabla)*/
+    /*max-height: 960px;/*alto máx (le puse mil así el fondo blanco abarca todo el alto del contenido de mi tabla)*/
+    width: 100%;/*que abarque todo lo disponible en el ancho*/
+    height: 80vh;
+    /*height: 100%;/*que abarque todo lo disponible en el alto*/
+    background-color: white;
+    /*box-shadow: diffHorizontal diffVertical desenfoque amplitud color;*/
+    box-shadow: 0 3px 6px rgba(0,0,0,16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius: 10px;
+    position: relative;
+    padding: 1.8em;
+    overflow: scroll; /*que pueda mover paraa rriba y abajo*/
+}
+
+.content{
+    padding:0.5em;/*que muestre el padding así*/
+}
+/*como la tabla nos mustra para hacer scroll horizontal(no es la idea xq son pocos eltos
+vamos a "romper la tabla" en bloques*/
+td{
+    display:block;
+    width:100%;
+}
+/*vamos a utilizar una paseudo clase
+para que podamos agarrar la fila del puesto del top
+de cada td*/
+td:nth-of-type(1){
+    font-size: 1.5em;
+    font-weight: bold;
+    color:#f64f59;
+}
+th{/*no vamos a mostrarlos encabezados*/
+    display: none;
+}
+
+.actions{
+    position: absolute;/*la posicion es relativa al contenedor mas cercano posicionado*/
+    top:1em;
+    right: 1em;
+}
+
+.close{
+    height: 40px;
+    width: 40px;
+    color:white;
+    border-radius: 50%;
+    background-color: purple;
+    display: inline-block;/*para que no ignore lo de height y width*/
+    box-shadow:0 3px 6px rgba(0,0,0,16), 0 3px 6px rgba(0,0,0,0.23);
+    font-weight: 300;
+    cursor:pointer; /*así nos aparece la manito*/
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table{
+    width: 100%;
+    border-spacing: 0;/*espacio de bordes en la tabla*/
+    /*margin: 0px;/*margen del contenido con respecto al borde la misma*/
+}
+
+td{
+    border:solid 0;
+}
+
+.table td, .table th{
+    padding: 1em;
+    text-align: left;
+}
+
+.table tr:nth-child(even){background-color: #BF6AF7;}
+
+.fa-heart{
+    color:purple;
+}
+
+.title-item{
+    border-bottom: solid 2px #f64f59;
+    padding-bottom: 1em;
+    line-height:1.8em;
+    font-size: 2em;
+}
+
+.position{
+    background-color: #f64f59;
+    color:white;
+    padding:0.5em;/*así no nos queda el 1 pegado al color, es decir ahora nos quedará con espacio para el color que lo rodee*/
+    border-radius: 4px;
+    margin-right: 0.5em;
+}
+
+.info{
+    display:inline-block;
+}
+
+.music{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 1.6em;
+}
+
+a:hover{
+    opacity: 0.8;
+}
+
+img{
+    max-width: 100%;
+}
+
+@media (min-width:900px){/*para pantallas con un min de 900px para arriba*/
+    th{
+        display:table-cell;
+    }
+    td{
+        width:auto;
+        display:table-cell;
+    }
+    td:nth-of-type(1){
+        font-size: 1em;
+    }
+    .content{
+        padding: 1.8em;
+    }
+}
+
+@media (min-height:550px){/*para pantallas menores a 550px de alto*/
+    .content{
+        height: 500px;/*que muestre el contenido de esta altura*/
+    }
+}
