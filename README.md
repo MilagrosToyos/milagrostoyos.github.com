@@ -8,7 +8,7 @@ En este proyecto, llamado **boletines** he puesto en práctica contenidos básic
 > Para visualizar mi página web, click aquí -> [Top10](https://milagrostoyos.github.io/boletines)
 
 
-### Notas de ambos proyectos:
+### Notas de proyecto:
  - Fueron escritos en el editor de código **VSCode**.
  - Utilicé el sistema de control de versiones **Git**.
  - Mis primeros pasos en Desarrollo Web, usando como guía el curso de Desarrollo Web Profesional de Código Facilito.
